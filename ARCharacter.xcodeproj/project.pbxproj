@@ -56,15 +56,39 @@
 		A53125492126A06B00CED823 /* ARCharacter */ = {
 			isa = PBXGroup;
 			children = (
-				A531254A2126A06B00CED823 /* AppDelegate.swift */,
-				A531254C2126A06B00CED823 /* art.scnassets */,
-				A531254E2126A06B00CED823 /* ViewController.swift */,
-				A53125502126A06B00CED823 /* Main.storyboard */,
-				A53125532126A06E00CED823 /* Assets.xcassets */,
-				A53125552126A06E00CED823 /* LaunchScreen.storyboard */,
-				A53125582126A06E00CED823 /* Info.plist */,
+				A53125602126A0A000CED823 /* ViewControllers */,
+				A531255F2126A09800CED823 /* Resources */,
+				A531255E2126A08A00CED823 /* Application */,
 			);
 			path = ARCharacter;
+			sourceTree = "<group>";
+		};
+		A531255E2126A08A00CED823 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A531254A2126A06B00CED823 /* AppDelegate.swift */,
+				A53125582126A06E00CED823 /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A531255F2126A09800CED823 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A53125502126A06B00CED823 /* Main.storyboard */,
+				A53125552126A06E00CED823 /* LaunchScreen.storyboard */,
+				A531254C2126A06B00CED823 /* art.scnassets */,
+				A53125532126A06E00CED823 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A53125602126A0A000CED823 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A531254E2126A06B00CED823 /* ViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +310,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2X6C6J4H2;
-				INFOPLIST_FILE = ARCharacter/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ARCharacter/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +318,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = NL.ARCharacter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -304,7 +328,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2X6C6J4H2;
-				INFOPLIST_FILE = ARCharacter/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ARCharacter/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +336,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = NL.ARCharacter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

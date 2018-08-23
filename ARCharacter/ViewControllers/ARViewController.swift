@@ -205,11 +205,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     private func addSpriteKitSolution(to node: SCNNode, with anchor: ARPlaneAnchor, at location: SCNVector3) {
         
+        // Update sprite location to move it up the plane
         var spriteLocation = location
         spriteLocation.y = Float(SpriteNode.spriteDimension / 2)
-//        character3DNode!.position = spriteLocation
-//        character3DNode!.constraints = [SCNBillboardConstraint()] // Always point 2d sprite to camera
-//        node.addChildNode(character3DNode!)
         
         // Add anchor at sprite's position to better track this area
         let anchorTransform = SCNMatrix4Translate(SCNMatrix4(anchor.transform), spriteLocation.x, spriteLocation.y, spriteLocation.z)

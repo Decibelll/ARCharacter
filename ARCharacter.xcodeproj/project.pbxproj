@@ -7,23 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A51C26CC212CA0D600882DCD /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51C26CB212CA0D600882DCD /* IntroViewController.swift */; };
+		A51C6030212E95F2001D23E0 /* SpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51C602F212E95F2001D23E0 /* SpriteNode.swift */; };
+		A51C6032212EA011001D23E0 /* SceneLightNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51C6031212EA011001D23E0 /* SceneLightNode.swift */; };
+		A5211503212DB7F400A10D7E /* TrackingSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5211502212DB7F400A10D7E /* TrackingSquare.swift */; };
 		A531254B2126A06B00CED823 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531254A2126A06B00CED823 /* AppDelegate.swift */; };
 		A531254D2126A06B00CED823 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = A531254C2126A06B00CED823 /* art.scnassets */; };
-		A531254F2126A06B00CED823 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531254E2126A06B00CED823 /* ViewController.swift */; };
+		A531254F2126A06B00CED823 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531254E2126A06B00CED823 /* ARViewController.swift */; };
 		A53125522126A06B00CED823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A53125502126A06B00CED823 /* Main.storyboard */; };
 		A53125542126A06E00CED823 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A53125532126A06E00CED823 /* Assets.xcassets */; };
 		A53125572126A06E00CED823 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A53125552126A06E00CED823 /* LaunchScreen.storyboard */; };
+		A531256621284F9400CED823 /* Character.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A531256521284F9400CED823 /* Character.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A51C26CB212CA0D600882DCD /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		A51C602F212E95F2001D23E0 /* SpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteNode.swift; sourceTree = "<group>"; };
+		A51C6031212EA011001D23E0 /* SceneLightNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLightNode.swift; sourceTree = "<group>"; };
+		A5211502212DB7F400A10D7E /* TrackingSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingSquare.swift; sourceTree = "<group>"; };
 		A53125472126A06B00CED823 /* ARCharacter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARCharacter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A531254A2126A06B00CED823 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A531254C2126A06B00CED823 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		A531254E2126A06B00CED823 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A531254E2126A06B00CED823 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		A53125512126A06B00CED823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A53125532126A06E00CED823 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A53125562126A06E00CED823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A53125582126A06E00CED823 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A531256521284F9400CED823 /* Character.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Character.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +47,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5211501212DB7A700A10D7E /* Virtual objects */ = {
+			isa = PBXGroup;
+			children = (
+				A5211502212DB7F400A10D7E /* TrackingSquare.swift */,
+				A51C602F212E95F2001D23E0 /* SpriteNode.swift */,
+				A51C6031212EA011001D23E0 /* SceneLightNode.swift */,
+			);
+			path = "Virtual objects";
+			sourceTree = "<group>";
+		};
 		A531253E2126A06B00CED823 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +76,7 @@
 		A53125492126A06B00CED823 /* ARCharacter */ = {
 			isa = PBXGroup;
 			children = (
+				A5211501212DB7A700A10D7E /* Virtual objects */,
 				A53125602126A0A000CED823 /* ViewControllers */,
 				A531255F2126A09800CED823 /* Resources */,
 				A531255E2126A08A00CED823 /* Application */,
@@ -79,6 +100,7 @@
 				A53125552126A06E00CED823 /* LaunchScreen.storyboard */,
 				A531254C2126A06B00CED823 /* art.scnassets */,
 				A53125532126A06E00CED823 /* Assets.xcassets */,
+				A531256521284F9400CED823 /* Character.atlas */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -86,7 +108,8 @@
 		A53125602126A0A000CED823 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A531254E2126A06B00CED823 /* ViewController.swift */,
+				A531254E2126A06B00CED823 /* ARViewController.swift */,
+				A51C26CB212CA0D600882DCD /* IntroViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -152,6 +175,7 @@
 				A531254D2126A06B00CED823 /* art.scnassets in Resources */,
 				A53125572126A06E00CED823 /* LaunchScreen.storyboard in Resources */,
 				A53125542126A06E00CED823 /* Assets.xcassets in Resources */,
+				A531256621284F9400CED823 /* Character.atlas in Resources */,
 				A53125522126A06B00CED823 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,8 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A531254F2126A06B00CED823 /* ViewController.swift in Sources */,
+				A51C26CC212CA0D600882DCD /* IntroViewController.swift in Sources */,
+				A51C6032212EA011001D23E0 /* SceneLightNode.swift in Sources */,
+				A531254F2126A06B00CED823 /* ARViewController.swift in Sources */,
+				A51C6030212E95F2001D23E0 /* SpriteNode.swift in Sources */,
 				A531254B2126A06B00CED823 /* AppDelegate.swift in Sources */,
+				A5211503212DB7F400A10D7E /* TrackingSquare.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

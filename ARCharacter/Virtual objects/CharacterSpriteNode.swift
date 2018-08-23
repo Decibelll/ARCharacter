@@ -1,5 +1,5 @@
 //
-//  SpriteNode.swift
+//  CharacterSpriteNode.swift
 //  ARCharacter
 //
 //  Created by Sergii Nesteruk on 8/23/18.
@@ -9,11 +9,9 @@
 import SceneKit
 import SpriteKit
 
-class SpriteNode: SCNNode {
+class CharacterSpriteNode: SCNNode {
     
-    static let spriteDimension: CGFloat = 0.1
-    
-    override init() {
+    init(dimension: CGFloat) {
         
         // Load animation frames from atlas
         let characterAtlas = SKTextureAtlas(named: "Character")
@@ -39,10 +37,10 @@ class SpriteNode: SCNNode {
         // Define material
         let material = SCNMaterial()
         material.diffuse.contents = scene
-        material.diffuse.contentsTransform = SCNMatrix4MakeScale(1,-1,-1) // align texture in the right direction
+        material.diffuse.contentsTransform = SCNMatrix4MakeScale(1, -1, -1) // align texture in the right direction
         material.diffuse.wrapT = .repeat
         material.diffuse.wrapS = .repeat
-        let plane = SCNPlane(width: SpriteNode.spriteDimension, height: SpriteNode.spriteDimension)
+        let plane = SCNPlane(width: dimension, height: dimension)
         plane.firstMaterial = material
         super.init()
         geometry = plane

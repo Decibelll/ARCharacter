@@ -22,6 +22,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     private weak var horizontalPlaneNode: SCNNode?
     private weak var tapGestureRecognizer: UITapGestureRecognizer?
     private weak var longPressGestureRecognizer: UILongPressGestureRecognizer?
+    private let characterDimension: CGFloat = 0.1
     
     // MARK: - Lifecycle callbacks
     
@@ -140,17 +141,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         
         // We only update anchor if trackingPlaneNode is still in .searching mode
-        guard
-            let trackingSquare = trackingPlaneNode,
-            trackingSquare.currentTrackingMode == .detected,
-            let horizontalPlane = horizontalPlaneNode,
-            horizontalPlane == node,
-            let planeAnchor = anchor as? ARPlaneAnchor
-        else { return }
-        
-        (trackingSquare.geometry as? SCNPlane)?.width = CGFloat(planeAnchor.extent.x)
-        (trackingSquare.geometry as? SCNPlane)?.height = CGFloat(planeAnchor.extent.z)
-        trackingSquare.simdPosition = planeAnchor.center
+        guard let horizontalPlane = horizontalPlaneNode, horizontalPlane == node else { return }
+        updateTrackingSquareDimensions()
     }
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
@@ -207,7 +199,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
         // Update sprite location to move it up the plane
         var spriteLocation = location
-        spriteLocation.y = Float(SpriteNode.spriteDimension / 2)
+        spriteLocation.y = Float(characterDimension / 2)
         
         // Add anchor at sprite's position to better track this area
         let anchorTransform = SCNMatrix4Translate(SCNMatrix4(anchor.transform), spriteLocation.x, spriteLocation.y, spriteLocation.z)
@@ -215,9 +207,11 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.add(anchor: spriteAnchor)
         
         // Add 2D sprite node
-        character3DNode = SpriteNode()
+        character3DNode = CharacterSpriteNode(dimension: characterDimension)
         character3DNode!.position = spriteLocation
-        character3DNode!.constraints = [SCNBillboardConstraint()] // Always point 2d sprite to camera
+        let constraint = SCNBillboardConstraint()
+//        constraint.freeAxes = .Y
+        character3DNode!.constraints = [constraint] // Always point 2d sprite to camera
         node.addChildNode(character3DNode!)
 
         
@@ -245,13 +239,11 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             trackingPlaneNode = TrackingSquare()
         }
         trackingPlaneNode?.changeTrackingMode(mode: mode)
+        
         switch mode {
         case .detected:
-            if let horizontalPlane = horizontalPlaneNode,
-                let planeAnchor = horizontalPlaneAnchor {
-                (trackingPlaneNode?.geometry as? SCNPlane)?.width = CGFloat(planeAnchor.extent.x)
-                (trackingPlaneNode?.geometry as? SCNPlane)?.height = CGFloat(planeAnchor.extent.z)
-                trackingPlaneNode?.simdPosition = planeAnchor.center
+            if let horizontalPlane = horizontalPlaneNode {
+                updateTrackingSquareDimensions()
                 horizontalPlane.addChildNode(trackingPlaneNode!)
             }
             
@@ -267,6 +259,15 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
         DispatchQueue.main.async {
             self.statusLabel.text = message
+        }
+    }
+    
+    private func updateTrackingSquareDimensions()
+    {
+        if let planeAnchor = horizontalPlaneAnchor, let trackingNode = trackingPlaneNode, trackingNode.currentTrackingMode == .detected {
+            (trackingNode.geometry as? SCNPlane)?.width = CGFloat(planeAnchor.extent.x)
+            (trackingNode.geometry as? SCNPlane)?.height = CGFloat(planeAnchor.extent.z)
+            trackingNode.simdPosition = planeAnchor.center
         }
     }
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A51C26CC212CA0D600882DCD /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51C26CB212CA0D600882DCD /* IntroViewController.swift */; };
-		A51C6030212E95F2001D23E0 /* SpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51C602F212E95F2001D23E0 /* SpriteNode.swift */; };
+		A51C6030212E95F2001D23E0 /* CharacterSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51C602F212E95F2001D23E0 /* CharacterSpriteNode.swift */; };
 		A51C6032212EA011001D23E0 /* SceneLightNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51C6031212EA011001D23E0 /* SceneLightNode.swift */; };
 		A5211503212DB7F400A10D7E /* TrackingSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5211502212DB7F400A10D7E /* TrackingSquare.swift */; };
 		A531254B2126A06B00CED823 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A531254A2126A06B00CED823 /* AppDelegate.swift */; };
@@ -22,7 +22,7 @@
 
 /* Begin PBXFileReference section */
 		A51C26CB212CA0D600882DCD /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
-		A51C602F212E95F2001D23E0 /* SpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteNode.swift; sourceTree = "<group>"; };
+		A51C602F212E95F2001D23E0 /* CharacterSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSpriteNode.swift; sourceTree = "<group>"; };
 		A51C6031212EA011001D23E0 /* SceneLightNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLightNode.swift; sourceTree = "<group>"; };
 		A5211502212DB7F400A10D7E /* TrackingSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingSquare.swift; sourceTree = "<group>"; };
 		A53125472126A06B00CED823 /* ARCharacter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARCharacter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,7 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				A5211502212DB7F400A10D7E /* TrackingSquare.swift */,
-				A51C602F212E95F2001D23E0 /* SpriteNode.swift */,
+				A51C602F212E95F2001D23E0 /* CharacterSpriteNode.swift */,
 				A51C6031212EA011001D23E0 /* SceneLightNode.swift */,
 			);
 			path = "Virtual objects";
@@ -190,7 +190,7 @@
 				A51C26CC212CA0D600882DCD /* IntroViewController.swift in Sources */,
 				A51C6032212EA011001D23E0 /* SceneLightNode.swift in Sources */,
 				A531254F2126A06B00CED823 /* ARViewController.swift in Sources */,
-				A51C6030212E95F2001D23E0 /* SpriteNode.swift in Sources */,
+				A51C6030212E95F2001D23E0 /* CharacterSpriteNode.swift in Sources */,
 				A531254B2126A06B00CED823 /* AppDelegate.swift in Sources */,
 				A5211503212DB7F400A10D7E /* TrackingSquare.swift in Sources */,
 			);
@@ -337,7 +337,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y2X6C6J4H2;
 				INFOPLIST_FILE = "$(SRCROOT)/ARCharacter/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -355,7 +355,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y2X6C6J4H2;
 				INFOPLIST_FILE = "$(SRCROOT)/ARCharacter/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

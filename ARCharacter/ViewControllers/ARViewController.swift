@@ -216,9 +216,10 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
         // Add 2D sprite node
         character3DNode = SpriteNode()
-        character3DNode!.position = SCNVector3(spriteAnchor.transform.columns.3.x, spriteAnchor.transform.columns.3.y, spriteAnchor.transform.columns.3.z)
+        character3DNode!.position = spriteLocation
         character3DNode!.constraints = [SCNBillboardConstraint()] // Always point 2d sprite to camera
-        sceneView.scene.rootNode.addChildNode(character3DNode!)
+        node.addChildNode(character3DNode!)
+
         
         // Add shadow plane
         let shadowPlane = SCNPlane(width: 5, height: 5)
